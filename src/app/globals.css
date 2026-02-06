@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --color-iot-dark: #000000;
   --color-iot-surface: #121212;
