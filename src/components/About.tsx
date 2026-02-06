@@ -9,10 +9,6 @@ export default function About() {
             </h2>
             <div className="w-20 group-hover:w-full transition-all duration-500 h-1 bg-iot-green mx-auto rounded-full"></div>
           </div>
-          <p className="mt-6 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            We don't just connect things to the internet. We build intelligent
-            systems that process data where it matters most—at the Edge.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
