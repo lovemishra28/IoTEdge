@@ -3,10 +3,12 @@ export default function About() {
     <section id="about" className="py-20 bg-white dark:bg-iot-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
-            About Us
-          </h2>
-          <div className="w-20 h-1 bg-iot-green mx-auto rounded-full"></div>
+          <div className="w-fit mx-auto group cursor-default">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
+              About Us
+            </h2>
+            <div className="w-20 group-hover:w-full transition-all duration-500 h-1 bg-iot-green mx-auto rounded-full"></div>
+          </div>
           <p className="mt-6 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             We don't just connect things to the internet. We build intelligent
             systems that process data where it matters most—at the Edge.
