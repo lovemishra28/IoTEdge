@@ -33,7 +33,7 @@ export default function Members() {
         </div>
         <div className="h-px grow bg-emerald-500/30 mx-4 hidden md:block" />
       </div>
-      <div className="flex overflow-x-auto space-x-6 pb-4 scroll-smooth scrollbar-hide">
+      <div className="flex overflow-x-auto space-x-6 pb-4 scroll-smooth scrollbar-hide auto-move">
         {members.map((member) => (
           <MemberCard key={member._id} member={member} />
         ))}
