@@ -1,65 +1,87 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { Wifi } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center items-center bg-iot-green text-black pt-20">
-      {/* Decorative Background Element - The "Node" Blur */}
-      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
-        <div className="absolute top-[-10%] left-[20%] w-72 h-72 bg-iot-green/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[20%] w-72 h-72 bg-iot-green/15 rounded-full blur-[120px]" />
-      </div> */}
-      {/* Floating Tech Doodles */}
-      <img 
-        src="/assets/Arduino1.png" 
-        alt="Arduino" 
-        className="absolute top-[12%] left-[5%] md:top-[18%] md:left-[8%] w-24 sm:w-40 md:w-52 lg:w-64 -rotate-15 opacity-80 hover:scale-110 hover:-rotate-6 transition-all duration-500 ease-in-out pointer-events-auto select-none"
+    <section
+      className="mt-[30px] relative overflow-hidden min-h-screen flex flex-col justify-center items-center
+                 bg-[#f5f7fa] dark:bg-[#0b0f14] text-slate-900 dark:text-white pt-24"
+    >
+      {/* Soft Background Glow */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[15%] left-[20%] w-[420px] h-[420px] bg-indigo-500/10 rounded-full blur-[160px]" />
+        <div className="absolute bottom-[15%] right-[20%] w-[420px] h-[420px] bg-slate-400/10 rounded-full blur-[160px]" />
+      </div>
+
+      {/* Floating Hardware Images */}
+      <img
+        src="/assets/Arduino1.png"
+        alt="Arduino"
+        className="absolute top-[12%] left-[6%]
+                   w-[90px] sm:w-[110px] md:w-[130px] lg:w-[150px]
+                   -rotate-12 opacity-70 hover:scale-105
+                   transition-all duration-500 pointer-events-none"
       />
-      <img 
-        src="/assets/relay.png" 
-        alt="Relay" 
-        className="absolute top-[12%] right-[5%] md:top-[18%] md:right-[8%] w-24 sm:w-40 md:w-52 lg:w-64 rotate-12 opacity-80 hover:scale-110 hover:rotate-6 transition-all duration-500 ease-in-out pointer-events-auto select-none"
+
+      <img
+        src="/assets/c++.png"
+        alt="C++"
+        className="absolute top-[12%] right-[6%]
+                   w-[90px] sm:w-[110px] md:w-[130px] lg:w-[150px]
+                   rotate-12 opacity-70 hover:scale-105
+                   transition-all duration-500 pointer-events-none"
       />
-      <img 
-        src="/assets/servo.png" 
-        alt="Servo" 
-        className="absolute bottom-[12%] left-[5%] md:bottom-[15%] md:left-[8%] w-24 sm:w-40 md:w-52 lg:w-64 rotate-12 opacity-80 hover:scale-110 hover:rotate-6 transition-all duration-500 ease-in-out pointer-events-auto select-none"
+
+      <img
+        src="/assets/py.png"
+        alt="Python"
+        className="absolute bottom-[12%] left-[6%]
+                   w-[90px] sm:w-[110px] md:w-[130px] lg:w-[150px]
+                   rotate-6 opacity-70 hover:scale-105
+                   transition-all duration-500 pointer-events-none"
       />
-      <img 
-        src="/assets/esp32.png" 
-        alt="ESP32" 
-        className="absolute bottom-[12%] right-[5%] md:bottom-[15%] md:right-[8%] w-24 sm:w-40 md:w-52 lg:w-64 -rotate-12 opacity-80 hover:scale-110 hover:rotate-6 transition-all duration-500 ease-in-out pointer-events-auto select-none"
+
+      <img
+        src="/assets/esp32.png"
+        alt="ESP32"
+        className="absolute bottom-[12%] right-[6%]
+                   w-[90px] sm:w-[110px] md:w-[130px] lg:w-[150px]
+                   -rotate-6 opacity-70 hover:scale-105
+                   transition-all duration-500 pointer-events-none"
       />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/20 bg-black/5 text-black text-sm font-medium mb-6">
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-300 dark:border-slate-600
+                        bg-white/70 dark:bg-slate-800/60 backdrop-blur text-sm font-medium mb-8">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-600 opacity-70"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
           </span>
           MITS Gwalior
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-9xl mb-8 flex items-center justify-center text-black">
-          <Logo edgeColor="text-white" />
+        <h1 className="mb-10 flex justify-center">
+          <Logo
+            edgeColor="text-indigo-600 dark:text-indigo-400"
+            className="w-[50px] h-auto"
+          />
         </h1>
 
-        <p className="max-w-2xl mx-auto text-lg md:text-xl text-black/80 mb-10">
-          The official IoT Edge Club club. We build smart solutions, 
-          experiment with edge computing, and connect the world one node at a time.
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-12 leading-relaxed">
+          The official IoT Edge Club of MITS Gwalior. We design intelligent
+          systems, explore edge computing, and build reliable solutions that
+          connect the physical and digital worlds.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {/* <Link
-            href="#projects"
-            className="px-8 py-3 rounded-full bg-black text-iot-green font-bold hover:bg-gray-800 transition-all shadow-lg"
-          >
-            View Projects
-          </Link> */}
+        <div className="flex justify-center">
           <Link
             href="#join"
-            className="px-8 py-3 rounded-full border-2 border-black text-black font-semibold hover:bg-black hover:text-iot-green transition-all"
+            className="px-10 py-3 rounded-full border border-slate-900 dark:border-white
+                       text-slate-900 dark:text-white font-semibold
+                       hover:bg-slate-900 hover:text-white
+                       dark:hover:bg-white dark:hover:text-black
+                       transition-all"
           >
             Join the Network
           </Link>

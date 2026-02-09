@@ -1,11 +1,16 @@
 interface LogoProps {
-  className?: string;
-  edgeColor?: string;
+  className?: string;      // Allows you to control width/height or text size
+  edgeColor?: string;      // Allows dynamic color for the "EDGE" part
 }
 
-export default function Logo({ className = "", edgeColor = "text-iot-green" }: LogoProps) {
+export default function Logo({
+  className = "",
+  edgeColor = "text-iot-green",
+}: LogoProps) {
   return (
-    <span className={`font-extrabold tracking-tight inline-flex items-center ${className}`}>
+    <span
+      className={`font-extrabold tracking-tight inline-flex items-center ${className}`}
+    >
       <span>I</span>
       <img
         src="/assets/iotEdge_logo.png"

@@ -14,9 +14,9 @@ html {
   --color-iot-green-deep: #2E4F21;
   --color-iot-light: #F9F9F9;
   --color-iot-text: #000000;
-  
-  --font-sans: var(--font-pixel), Arial, Helvetica, sans-serif;
-  --font-pixel: var(--font-pixel), Arial, Helvetica, sans-serif;
+
+  /* ✅ TIMES NEW ROMAN ONLY */
+  --font-sans: "Times New Roman", Times, serif;
 }
 
 :root {
@@ -36,15 +36,45 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-pixel), Arial, Helvetica, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Custom utility for that "IoT Glow" effect */
+/* Optional glow effect (kept) */
 .glow-green {
   text-shadow: 0 0 10px rgba(160, 241, 189, 0.5);
 }
 
 .border-iot {
   border: 1px solid rgba(160, 241, 189, 0.2);
+}
+@keyframes slideLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-lr {
+  animation: slideLeftToRight 0.8s ease-out forwards;
+  opacity: 0;
+}
+@keyframes autoLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.auto-move {
+  animation: autoLeftRight 1s ease-in-out infinite;
 }
