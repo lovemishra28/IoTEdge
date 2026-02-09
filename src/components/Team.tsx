@@ -2,7 +2,7 @@
 
 import { Linkedin, Github, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const teamMembers = [
   {
@@ -72,19 +72,22 @@ export default function Team() {
   const hasCheckedInitialVisibility = useRef(false);
 
   // Check if already visible on mount and start animation
-  useLayoutEffect(() => {
-    if (sectionRef.current && !hasCheckedInitialVisibility.current) {
+  useEffect(() => {
+    if (!hasCheckedInitialVisibility.current && sectionRef.current) {
       hasCheckedInitialVisibility.current = true;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-      if (isVisible) {
-        // Small delay to ensure DOM is ready
-        setTimeout(() => {
+      const checkAndStart = () => {
+        if (!sectionRef.current) return;
+        const rect = sectionRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isVisible && !hasInteracted) {
           setAnimationPhase('forward');
-        }, 300);
-      }
+        }
+      };
+      // Wait for component to fully render
+      const timer = setTimeout(checkAndStart, 500);
+      return () => clearTimeout(timer);
     }
-  }, []);
+  }, [hasInteracted]);
 
   // Intersection Observer to start animation
   useEffect(() => {
