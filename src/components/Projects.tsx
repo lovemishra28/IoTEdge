@@ -14,13 +14,13 @@ export default async function Projects() {
   const projects = await getProjects();
 
   return (
-    <section id="projects" className="py-20 bg-iot-light dark:bg-iot-dark/50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">Innovation Lab</h2>
-          <p className="text-gray-700 dark:text-gray-300 mt-2">Active prototypes and completed systems by our members.</p>
+          <h2 className="text-3xl md:text-4xl font-bold">Innovation Lab</h2>
+          <p className="text-gray-400 mt-2">Active prototypes and completed systems by our members.</p>
         </div>
-        <div className="h-px grow bg-iot-green/30 mx-4 hidden md:block"></div>
+        <div className="h-px grow bg-iot-surface mx-4 hidden md:block"></div>
       </div>
 
       {projects.length > 0 ? (
@@ -30,8 +30,8 @@ export default async function Projects() {
           ))}
         </div>
       ) : (
-        <div className="p-12 rounded-2xl border border-dashed border-iot-green/40 text-center bg-white dark:bg-iot-surface/20">
-          <p className="text-gray-700 dark:text-gray-300">No projects deployed to the network yet. Check back soon!</p>
+        <div className="p-12 rounded-2xl border border-dashed border-iot-surface text-center">
+          <p className="text-gray-500">No projects deployed to the network yet. Check back soon!</p>
         </div>
       )}
     </section>
