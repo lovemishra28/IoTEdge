@@ -11,7 +11,7 @@ interface MemberCardProps {
 export default function MemberCard({ member }: MemberCardProps) {
   return (
     <div
-      className="mt-[30px] w-[calc(50%-1rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(20%-1.2rem)]
+      className="mt-[30px] w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(20%-1.2rem)]
                  bg-white dark:bg-iot-surface/20 rounded-2xl shadow-lg
                  flex flex-col items-center text-center p-4 flex-shrink-0
                  hover:scale-105 transition-transform"
